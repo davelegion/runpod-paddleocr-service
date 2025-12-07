@@ -14,9 +14,8 @@ RUN apt-get update && \
 # Upgrade pip
 RUN pip3 install --no-cache-dir --upgrade pip
 
-# Download PaddlePaddle GPU wheel from Dropbox (1.1GB)
-# Use curl with -L to follow redirects
-RUN curl -L -o /tmp/paddlepaddle_gpu.whl "https://www.dropbox.com/scl/fi/4rlmozsr1zv7lru6cmrhl/paddlepaddle_gpu-3.2.0-cp311-cp311-linux_x86_64.whl?rlkey=g8k1le8zyfic2ijb3dg5m1dnx&dl=1" && \
+# Download PaddlePaddle GPU wheel from GitHub Releases (1.1GB)
+RUN curl -L -o /tmp/paddlepaddle_gpu.whl "https://github.com/davelegion/runpod-paddleocr-service/releases/download/v1.0-paddlewheel/paddlepaddle_gpu-3.2.0-cp311-cp311-linux_x86_64.whl" && \
     pip3 install --no-cache-dir /tmp/paddlepaddle_gpu.whl && \
     rm /tmp/paddlepaddle_gpu.whl
 
