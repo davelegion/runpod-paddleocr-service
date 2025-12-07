@@ -1,0 +1,22 @@
+# RunPod Model Service Dependencies
+# Phase 4 - PaddleOCR-VL Integration
+
+# RunPod Serverless SDK
+runpod>=1.6.0
+
+# Web framework (kept for local testing)
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+python-multipart==0.0.6
+
+# HTTP client for document downloads
+requests>=2.31.0
+
+# PaddleOCR-VL (Vision-Language Model for document understanding)
+# Use [doc-parser] extra to include VL model dependencies
+# NOTE: paddlepaddle-gpu 3.2.0 installed directly in Dockerfile from PaddlePaddle repo
+paddleocr[doc-parser]>=3.1.0
+
+# Additional OCR dependencies
+Pillow>=10.0.0
